@@ -1,0 +1,63 @@
+2025-04-03 22:27:24,135 - INFO - === GeckoBot Logging Session 20250403_222724 Started ===
+2025-04-03 22:27:24,138 - INFO - === Starting GeckoBot Poker Game ===
+2025-04-03 22:27:24,138 - INFO - === Round 1 Started ===
+2025-04-03 22:27:24,138 - ERROR - Logger initialized with session ID: 20250403_222724Log directory: logsLog directory exists: True
+=== New Game Started ===
+2025-04-03 22:27:25,675 - INFO - === Round 2 Started ===
+2025-04-03 22:27:25,688 - ERROR - 
+=== Hole Cards ===Your hand: 8s 3hMonte Carlo win probability: 17.55%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-03 22:27:26,987 - INFO - === Round 3 Started ===
+2025-04-03 22:27:26,989 - ERROR - 
+=== Hole Cards ===Your hand: 3c 2sMonte Carlo win probability: 16.45%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-03 22:27:28,358 - INFO - === Round 4 Started ===
+2025-04-03 22:27:28,359 - ERROR - 
+=== Hole Cards ===Your hand: Tc QdMonte Carlo win probability: 35.75%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-03 22:27:29,521 - INFO - === Round 5 Started ===
+2025-04-03 22:27:29,522 - ERROR - 
+=== Hole Cards ===Your hand: 8d 9sMonte Carlo win probability: 29.55%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-03 22:27:30,706 - INFO - === Round 6 Started ===
+2025-04-03 22:27:30,707 - ERROR - 
+=== Hole Cards ===Your hand: 4s KsMonte Carlo win probability: 30.60%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-03 22:27:31,868 - INFO - === Round 7 Started ===
+2025-04-03 22:27:31,883 - ERROR - 
+=== Hole Cards ===Your hand: Tc AcMonte Carlo win probability: 42.10%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-03 22:27:34,136 - ERROR - 
+=== Hole Cards ===Your hand: Qd QhMonte Carlo win probability: 57.50%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot raises to 225.0
+=== Flop ===Ks 9c 7sMonte Carlo win probability: 49.55%
+=== FLOP Betting Round ===Pot: 315.0Your stack: 29765.0Opponent checks
+2025-04-03 22:27:34,141 - ERROR - Traceback (most recent call last):
+2025-04-03 22:27:34,154 - ERROR -   File "C:\Users\null\gecko_poker_bot_v2\main.py", line 127, in <module>
+2025-04-03 22:27:34,157 - ERROR - main()  File "C:\Users\null\gecko_poker_bot_v2\main.py", line 114, in main
+2025-04-03 22:27:34,159 - ERROR - runner.run_hand()  File "C:\Users\null\gecko_poker_bot_v2\game_runner.py", line 66, in run_hand
+2025-04-03 22:27:34,168 - ERROR - if self._run_betting_round(Street.FLOP):  File "C:\Users\null\gecko_poker_bot_v2\game_runner.py", line 205, in _run_betting_round
+2025-04-03 22:27:34,171 - ERROR - action, bet_size = self.bot.make_decision()  File "C:\Users\null\gecko_poker_bot_v2\gecko_bot.py", line 30, in make_decision
+2025-04-03 22:27:34,175 - ERROR - return self._make_flop_decision()  File "C:\Users\null\gecko_poker_bot_v2\gecko_bot.py", line 156, in _make_flop_decision
+2025-04-03 22:27:34,208 - ERROR - if self._facing_cbet():  File "C:\Users\null\gecko_poker_bot_v2\gecko_bot.py", line 438, in _facing_cbet
+2025-04-03 22:27:34,736 - ERROR - preflop_raisers = [p for p in self.table_state.players.values()  File "C:\Users\null\gecko_poker_bot_v2\gecko_bot.py", line 439, in <listcomp>
+2025-04-03 22:27:34,805 - ERROR - if p.preflop_action == Action.RAISE]AttributeError: 'Player' object has no attribute 'preflop_action'

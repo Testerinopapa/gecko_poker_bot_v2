@@ -1,0 +1,21 @@
+2025-04-04 21:17:36,250 - INFO - === GeckoBot Logging Session 20250404_211736 Started ===
+2025-04-04 21:17:36,255 - INFO - === Starting GeckoBot Poker Game ===
+2025-04-04 21:17:36,256 - INFO - === Round 1 Started ===
+2025-04-04 21:17:36,256 - INFO - === New Game Started ===
+2025-04-04 21:17:36,256 - INFO - === Hand 1 Started ===
+2025-04-04 21:17:36,257 - INFO - Hole cards: 5h Jc
+2025-04-04 21:17:37,284 - INFO - PREFLOP win probability: 25.40%
+2025-04-04 21:17:37,284 - INFO - Small Blind: 10
+2025-04-04 21:17:37,284 - INFO - Big Blind: 20
+2025-04-04 21:17:37,284 - INFO - Pot size: 30.0
+2025-04-04 21:17:37,302 - INFO - === PREFLOP Betting Round ===
+2025-04-04 21:17:37,302 - INFO - Pot size: 30.0
+2025-04-04 21:17:37,302 - INFO - Hero stack: 29990
+2025-04-04 21:17:37,302 - ERROR - Logger initialized with session ID: 20250404_211736Log directory: logsLog directory exists: True
+2025-04-04 21:17:37,302 - ERROR - Traceback (most recent call last):
+2025-04-04 21:17:37,302 - ERROR -   File "C:\Users\null\gecko_poker_bot_v2\main.py", line 163, in <module>
+2025-04-04 21:17:37,302 - ERROR - main()  File "C:\Users\null\gecko_poker_bot_v2\main.py", line 144, in main
+2025-04-04 21:17:37,302 - ERROR - runner.run_hand()  File "C:\Users\null\gecko_poker_bot_v2\game_runner.py", line 108, in run_hand
+2025-04-04 21:17:37,317 - ERROR - if self._run_betting_round(Street.PREFLOP):  File "C:\Users\null\gecko_poker_bot_v2\game_runner.py", line 341, in _run_betting_round
+2025-04-04 21:17:37,317 - ERROR - self.table_state.record_action(0, Action.RAISE, raise_size)  File "C:\Users\null\gecko_poker_bot_v2\table_state.py", line 139, in record_action
+2025-04-04 21:17:37,317 - ERROR - bet_position = self.betting_symbols.get_bet_position(player_name, self.current_street)AttributeError: 'BettingActionSymbols' object has no attribute 'get_bet_position'

@@ -1,0 +1,17 @@
+2025-04-04 17:30:44,823 - INFO - === GeckoBot Logging Session 20250404_173044 Started ===
+2025-04-04 17:30:44,824 - INFO - === Starting GeckoBot Poker Game ===
+2025-04-04 17:30:44,825 - INFO - === Round 1 Started ===
+2025-04-04 17:30:44,830 - ERROR - Logger initialized with session ID: 20250404_173044Log directory: logsLog directory exists: True
+=== New Game Started ===
+2025-04-04 17:30:52,825 - ERROR - 
+=== Hole Cards ===Your hand: Ad QdMonte Carlo win probability: 42.20%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot raises to 225.0
+=== Flop ===4c 8h 3cMonte Carlo win probability: 24.25%
+=== FLOP Betting Round ===Pot: 315.0Your stack: 29765.0Opponent checksBot folds
+=== Hand Complete ===Final pot: 315.0Your final stack: 29765.0
+Play another hand? (y/n): 
+2025-04-04 17:33:06,289 - ERROR - Traceback (most recent call last):
+2025-04-04 17:33:07,760 - ERROR -   File "C:\Users\null\gecko_poker_bot_v2\main.py", line 143, in <module>
+2025-04-04 17:33:07,890 - ERROR - main()  File "C:\Users\null\gecko_poker_bot_v2\main.py", line 128, in main
+2025-04-04 17:33:07,931 - ERROR - response = input("\nPlay another hand? (y/n): ")KeyboardInterrupt

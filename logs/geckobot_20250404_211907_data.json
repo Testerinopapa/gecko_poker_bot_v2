@@ -1,0 +1,90 @@
+{
+  "session_id": "20250404_211907",
+  "hands_played": 1,
+  "starting_stack": 29990,
+  "ending_stack": 29990,
+  "profit_loss": 0,
+  "duration": 2.333195447921753,
+  "hands": [
+    {
+      "hand_id": 1,
+      "hole_cards": [
+        "3c",
+        "2s"
+      ],
+      "community_cards": [],
+      "actions": [
+        {
+          "player": "Button",
+          "action": "calls",
+          "amount": 20,
+          "time": 1743812348.5150125
+        },
+        {
+          "player": "Bot",
+          "action": "folds",
+          "amount": null,
+          "time": 1743812348.7056613
+        }
+      ],
+      "pot_size": 30.0,
+      "start_time": 1743812347.4560547,
+      "streets": {
+        "PREFLOP": {
+          "actions": [
+            {
+              "player": "Button",
+              "action": "calls",
+              "amount": 20,
+              "time": 1743812348.5150125
+            },
+            {
+              "player": "Bot",
+              "action": "folds",
+              "amount": null,
+              "time": 1743812348.7056613
+            }
+          ]
+        }
+      },
+      "small_blind": 10,
+      "big_blind": 20,
+      "end_time": 1743812348.8318844,
+      "final_pot": 50.0,
+      "hero_stack": 29990,
+      "result": -0.5
+    }
+  ],
+  "performance": {
+    "elapsed_time": 2.347311496734619,
+    "hands_played": 1,
+    "hands_per_second": 0.42601929969291047,
+    "win_loss_record": {
+      "wins": 0,
+      "losses": 1,
+      "ties": 0
+    },
+    "win_rate": 0.0,
+    "decision_times": {
+      "min": 0.0,
+      "max": 0.0,
+      "avg": 0.0,
+      "total": 0.0
+    },
+    "memory_usage": {
+      "min": 120.49609375,
+      "max": 120.49609375,
+      "avg": 120.49609375,
+      "current": 120.49609375
+    }
+  },
+  "decisions": [
+    {
+      "name": "PREFLOP Decision",
+      "description": "Making a decision on PREFLOP with ('3c', '2s')",
+      "result": "(<Action.FOLD: 1>, 0.0)",
+      "execution_time": 0.0,
+      "children": []
+    }
+  ]
+}

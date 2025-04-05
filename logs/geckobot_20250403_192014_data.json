@@ -1,0 +1,107 @@
+{
+  "session_id": "20250403_192014",
+  "hands_played": 1,
+  "starting_stack": 30000,
+  "ending_stack": 30000,
+  "profit_loss": 0,
+  "duration": 0.41491103172302246,
+  "hands": [
+    {
+      "hand_id": 1,
+      "hole_cards": [
+        "Ah",
+        "Kh"
+      ],
+      "community_cards": [
+        "2h",
+        "7d",
+        "Jc"
+      ],
+      "actions": [
+        {
+          "player": "Button",
+          "action": "raises",
+          "amount": 60,
+          "time": 1743718814.7890825
+        },
+        {
+          "player": "Bot",
+          "action": "calls",
+          "amount": 60,
+          "time": 1743718814.80476
+        },
+        {
+          "player": "Button",
+          "action": "checks",
+          "amount": null,
+          "time": 1743718815.0064828
+        },
+        {
+          "player": "Bot",
+          "action": "bets",
+          "amount": 70,
+          "time": 1743718815.1142848
+        },
+        {
+          "player": "Button",
+          "action": "folds",
+          "amount": null,
+          "time": 1743718815.1523507
+        }
+      ],
+      "pot_size": 210,
+      "start_time": 1743718814.7880695,
+      "streets": {
+        "PREFLOP": {
+          "actions": [
+            {
+              "player": "Button",
+              "action": "raises",
+              "amount": 60,
+              "time": 1743718814.7890825
+            },
+            {
+              "player": "Bot",
+              "action": "calls",
+              "amount": 60,
+              "time": 1743718814.80476
+            }
+          ]
+        },
+        "FLOP": {
+          "cards": [
+            "2h",
+            "7d",
+            "Jc"
+          ],
+          "actions": [
+            {
+              "player": "Button",
+              "action": "checks",
+              "amount": null,
+              "time": 1743718815.0064828
+            },
+            {
+              "player": "Bot",
+              "action": "bets",
+              "amount": 70,
+              "time": 1743718815.1142848
+            },
+            {
+              "player": "Button",
+              "action": "folds",
+              "amount": null,
+              "time": 1743718815.1523507
+            }
+          ],
+          "win_probability": 0.42
+        }
+      },
+      "small_blind": 10,
+      "big_blind": 20,
+      "end_time": 1743718815.2029805,
+      "final_pot": 210,
+      "hero_stack": 30000
+    }
+  ]
+}

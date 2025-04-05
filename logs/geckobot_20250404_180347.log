@@ -1,0 +1,726 @@
+2025-04-04 18:03:47,116 - INFO - === GeckoBot Logging Session 20250404_180347 Started ===
+2025-04-04 18:03:47,119 - INFO - === Starting GeckoBot Poker Game ===
+2025-04-04 18:03:47,125 - INFO - === Round 1 Started ===
+2025-04-04 18:03:47,125 - ERROR - Logger initialized with session ID: 20250404_180347Log directory: logsLog directory exists: True
+=== New Game Started ===
+2025-04-04 18:03:52,149 - INFO - === Round 2 Started ===
+2025-04-04 18:03:52,152 - ERROR - 
+=== Hole Cards ===Your hand: Td 3hMonte Carlo win probability: 22.70%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:03:53,982 - INFO - === Round 3 Started ===
+2025-04-04 18:03:53,982 - ERROR - 
+=== Hole Cards ===Your hand: Qc 3hMonte Carlo win probability: 24.15%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:03:55,301 - INFO - === Round 4 Started ===
+2025-04-04 18:03:55,302 - ERROR - 
+=== Hole Cards ===Your hand: 3s 5sMonte Carlo win probability: 22.40%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:03:59,245 - INFO - === Round 5 Started ===
+2025-04-04 18:03:59,246 - ERROR - 
+=== Hole Cards ===Your hand: 7c KsMonte Carlo win probability: 31.95%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:02,580 - INFO - === Round 6 Started ===
+2025-04-04 18:04:02,584 - ERROR - 
+=== Hole Cards ===Your hand: Kd 4hMonte Carlo win probability: 26.30%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:11,532 - INFO - === Round 7 Started ===
+2025-04-04 18:04:11,535 - ERROR - 
+=== Hole Cards ===Your hand: 4c KsMonte Carlo win probability: 27.90%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:24,996 - INFO - === Round 8 Started ===
+2025-04-04 18:04:25,048 - ERROR - 
+=== Hole Cards ===Your hand: Td TcMonte Carlo win probability: 48.10%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot raises to 225.0
+=== Flop ===5s 7s JdMonte Carlo win probability: 48.70%
+=== FLOP Betting Round ===Pot: 315.0Your stack: 29765.0Opponent checksBot folds
+=== Hand Complete ===Final pot: 315.0Your final stack: 29765.0
+=== New Game Started ===
+2025-04-04 18:04:27,299 - INFO - === Round 9 Started ===
+2025-04-04 18:04:27,301 - ERROR - 
+=== Hole Cards ===Your hand: 9h AdMonte Carlo win probability: 36.45%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:28,817 - INFO - === Round 10 Started ===
+2025-04-04 18:04:28,819 - ERROR - 
+=== Hole Cards ===Your hand: Qh AsMonte Carlo win probability: 37.60%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:29,904 - INFO - === Round 11 Started ===
+2025-04-04 18:04:29,906 - ERROR - 
+=== Hole Cards ===Your hand: Tc 7dMonte Carlo win probability: 27.50%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:31,013 - INFO - === Round 12 Started ===
+2025-04-04 18:04:31,014 - ERROR - 
+=== Hole Cards ===Your hand: 4h TsMonte Carlo win probability: 22.75%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:32,178 - INFO - === Round 13 Started ===
+2025-04-04 18:04:32,179 - ERROR - 
+=== Hole Cards ===Your hand: Kd 4hMonte Carlo win probability: 27.40%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:33,902 - INFO - === Round 14 Started ===
+2025-04-04 18:04:33,903 - ERROR - 
+=== Hole Cards ===Your hand: 9s AcMonte Carlo win probability: 35.85%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:35,231 - INFO - === Round 15 Started ===
+2025-04-04 18:04:35,232 - ERROR - 
+=== Hole Cards ===Your hand: As JhMonte Carlo win probability: 40.25%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:36,586 - INFO - === Round 16 Started ===
+2025-04-04 18:04:36,587 - ERROR - 
+=== Hole Cards ===Your hand: 8d 7dMonte Carlo win probability: 29.50%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:38,229 - INFO - === Round 17 Started ===
+2025-04-04 18:04:38,230 - ERROR - 
+=== Hole Cards ===Your hand: 5c JsMonte Carlo win probability: 26.50%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:39,384 - INFO - === Round 18 Started ===
+2025-04-04 18:04:39,385 - ERROR - 
+=== Hole Cards ===Your hand: 6s QcMonte Carlo win probability: 26.50%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:40,685 - INFO - === Round 19 Started ===
+2025-04-04 18:04:40,686 - ERROR - 
+=== Hole Cards ===Your hand: 8c 2hMonte Carlo win probability: 18.80%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:42,068 - INFO - === Round 20 Started ===
+2025-04-04 18:04:42,069 - ERROR - 
+=== Hole Cards ===Your hand: 5h QdMonte Carlo win probability: 25.75%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:43,139 - INFO - === Round 21 Started ===
+2025-04-04 18:04:43,143 - ERROR - 
+=== Hole Cards ===Your hand: 5d ThMonte Carlo win probability: 23.40%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:44,939 - INFO - === Round 22 Started ===
+2025-04-04 18:04:44,979 - ERROR - 
+=== Hole Cards ===Your hand: 7d 8sMonte Carlo win probability: 24.60%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:46,979 - INFO - === Round 23 Started ===
+2025-04-04 18:04:46,980 - ERROR - 
+=== Hole Cards ===Your hand: 8d 5cMonte Carlo win probability: 24.50%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:48,141 - INFO - === Round 24 Started ===
+2025-04-04 18:04:48,144 - ERROR - 
+=== Hole Cards ===Your hand: Ah KcMonte Carlo win probability: 42.25%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:50,955 - INFO - === Round 25 Started ===
+2025-04-04 18:04:50,956 - ERROR - 
+=== Hole Cards ===Your hand: Ks KcMonte Carlo win probability: 61.50%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot raises to 125.0
+=== Flop ===8d Ad 5dMonte Carlo win probability: 40.35%
+=== FLOP Betting Round ===Pot: 175.0Your stack: 29865.0Opponent bets 87.5Bot folds
+=== Hand Complete ===Final pot: 262.5Your final stack: 29865.0
+=== New Game Started ===
+2025-04-04 18:04:52,132 - INFO - === Round 26 Started ===
+2025-04-04 18:04:52,134 - ERROR - 
+=== Hole Cards ===Your hand: 6s JsMonte Carlo win probability: 30.90%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:53,785 - INFO - === Round 27 Started ===
+2025-04-04 18:04:53,786 - ERROR - 
+=== Hole Cards ===Your hand: 9h TdMonte Carlo win probability: 29.85%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:54,867 - INFO - === Round 28 Started ===
+2025-04-04 18:04:54,870 - ERROR - 
+=== Hole Cards ===Your hand: 7h 9cMonte Carlo win probability: 26.25%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:56,067 - INFO - === Round 29 Started ===
+2025-04-04 18:04:56,068 - ERROR - 
+=== Hole Cards ===Your hand: 9d 2hMonte Carlo win probability: 19.95%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:04:58,400 - INFO - === Round 30 Started ===
+2025-04-04 18:04:58,402 - ERROR - 
+=== Hole Cards ===Your hand: 2h 2cMonte Carlo win probability: 26.20%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot raises to 225.0
+=== Flop ===9d Qs 6cMonte Carlo win probability: 17.80%
+=== FLOP Betting Round ===Pot: 315.0Your stack: 29765.0Opponent bets 157.5Bot folds
+=== Hand Complete ===Final pot: 472.5Your final stack: 29765.0
+=== New Game Started ===
+2025-04-04 18:04:59,553 - INFO - === Round 31 Started ===
+2025-04-04 18:04:59,554 - ERROR - 
+=== Hole Cards ===Your hand: As 7hMonte Carlo win probability: 31.30%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:00,662 - INFO - === Round 32 Started ===
+2025-04-04 18:05:00,663 - ERROR - 
+=== Hole Cards ===Your hand: 4h 8hMonte Carlo win probability: 25.85%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:01,713 - INFO - === Round 33 Started ===
+2025-04-04 18:05:01,713 - ERROR - 
+=== Hole Cards ===Your hand: Kc 3cMonte Carlo win probability: 29.70%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:04,826 - INFO - === Round 34 Started ===
+2025-04-04 18:05:04,827 - ERROR - 
+=== Hole Cards ===Your hand: Js KsMonte Carlo win probability: 40.15%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot raises to 225.0
+=== Flop ===6h 3d 4sMonte Carlo win probability: 24.65%
+=== FLOP Betting Round ===Pot: 315.0Your stack: 29765.0Opponent checksBot folds
+=== Hand Complete ===Final pot: 315.0Your final stack: 29765.0
+=== New Game Started ===
+2025-04-04 18:05:06,753 - INFO - === Round 35 Started ===
+2025-04-04 18:05:06,754 - ERROR - 
+=== Hole Cards ===Your hand: As QsMonte Carlo win probability: 44.50%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot raises to 125.0
+=== Flop ===6d Th 3cMonte Carlo win probability: 28.45%
+=== FLOP Betting Round ===Pot: 175.0Your stack: 29865.0Opponent checksBot folds
+=== Hand Complete ===Final pot: 175.0Your final stack: 29865.0
+=== New Game Started ===
+2025-04-04 18:05:07,716 - INFO - === Round 36 Started ===
+2025-04-04 18:05:07,718 - ERROR - 
+=== Hole Cards ===Your hand: 6d 5hMonte Carlo win probability: 24.15%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:08,653 - INFO - === Round 37 Started ===
+2025-04-04 18:05:08,654 - ERROR - 
+=== Hole Cards ===Your hand: 7c TcMonte Carlo win probability: 30.40%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:09,594 - INFO - === Round 38 Started ===
+2025-04-04 18:05:09,595 - ERROR - 
+=== Hole Cards ===Your hand: 4s 7cMonte Carlo win probability: 18.65%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:10,590 - INFO - === Round 39 Started ===
+2025-04-04 18:05:10,592 - ERROR - 
+=== Hole Cards ===Your hand: 2c 8cMonte Carlo win probability: 24.05%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:11,863 - INFO - === Round 40 Started ===
+2025-04-04 18:05:11,864 - ERROR - 
+=== Hole Cards ===Your hand: Jd AdMonte Carlo win probability: 37.30%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:13,542 - INFO - === Round 41 Started ===
+2025-04-04 18:05:13,544 - ERROR - 
+=== Hole Cards ===Your hand: Jh QhMonte Carlo win probability: 39.50%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot raises to 125.0
+=== Flop ===5c 9c JdMonte Carlo win probability: 58.15%
+=== FLOP Betting Round ===Pot: 175.0Your stack: 29865.0Opponent checksBot folds
+=== Hand Complete ===Final pot: 175.0Your final stack: 29865.0
+=== New Game Started ===
+2025-04-04 18:05:14,413 - INFO - === Round 42 Started ===
+2025-04-04 18:05:14,414 - ERROR - 
+=== Hole Cards ===Your hand: 9d KdMonte Carlo win probability: 36.60%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:16,131 - INFO - === Round 43 Started ===
+2025-04-04 18:05:16,179 - ERROR - 
+=== Hole Cards ===Your hand: 6s KcMonte Carlo win probability: 29.25%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:18,121 - INFO - === Round 44 Started ===
+2025-04-04 18:05:18,123 - ERROR - 
+=== Hole Cards ===Your hand: Kd 2hMonte Carlo win probability: 24.30%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:20,671 - INFO - === Round 45 Started ===
+2025-04-04 18:05:20,675 - ERROR - 
+=== Hole Cards ===Your hand: Jc 9hMonte Carlo win probability: 28.90%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:25,956 - INFO - === Round 46 Started ===
+2025-04-04 18:05:25,971 - ERROR - 
+=== Hole Cards ===Your hand: 4s QcMonte Carlo win probability: 22.95%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:29,280 - INFO - === Round 47 Started ===
+2025-04-04 18:05:29,282 - ERROR - 
+=== Hole Cards ===Your hand: 8h JsMonte Carlo win probability: 30.40%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:31,818 - INFO - === Round 48 Started ===
+2025-04-04 18:05:31,821 - ERROR - 
+=== Hole Cards ===Your hand: 4h QdMonte Carlo win probability: 24.85%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:33,816 - INFO - === Round 49 Started ===
+2025-04-04 18:05:33,817 - ERROR - 
+=== Hole Cards ===Your hand: 6h 2cMonte Carlo win probability: 18.10%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:35,055 - INFO - === Round 50 Started ===
+2025-04-04 18:05:35,056 - ERROR - 
+=== Hole Cards ===Your hand: Td 9hMonte Carlo win probability: 31.35%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:36,385 - INFO - === Round 51 Started ===
+2025-04-04 18:05:36,390 - ERROR - 
+=== Hole Cards ===Your hand: Kh 3cMonte Carlo win probability: 26.40%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:37,575 - INFO - === Round 52 Started ===
+2025-04-04 18:05:37,576 - ERROR - 
+=== Hole Cards ===Your hand: 8c KhMonte Carlo win probability: 33.10%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:39,742 - INFO - === Round 53 Started ===
+2025-04-04 18:05:39,748 - ERROR - 
+=== Hole Cards ===Your hand: 4s JsMonte Carlo win probability: 25.90%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:41,124 - INFO - === Round 54 Started ===
+2025-04-04 18:05:41,155 - ERROR - 
+=== Hole Cards ===Your hand: Qd 8dMonte Carlo win probability: 33.65%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:42,423 - INFO - === Round 55 Started ===
+2025-04-04 18:05:42,424 - ERROR - 
+=== Hole Cards ===Your hand: Jh 5sMonte Carlo win probability: 22.90%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:52,185 - INFO - === Round 56 Started ===
+2025-04-04 18:05:52,286 - ERROR - 
+=== Hole Cards ===Your hand: 7d 9cMonte Carlo win probability: 27.60%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:53,960 - INFO - === Round 57 Started ===
+2025-04-04 18:05:53,965 - ERROR - 
+=== Hole Cards ===Your hand: 3c 6cMonte Carlo win probability: 22.70%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:57,988 - INFO - === Round 58 Started ===
+2025-04-04 18:05:57,989 - ERROR - 
+=== Hole Cards ===Your hand: 3s 9dMonte Carlo win probability: 21.55%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:05:59,906 - INFO - === Round 59 Started ===
+2025-04-04 18:05:59,908 - ERROR - 
+=== Hole Cards ===Your hand: Jc 3dMonte Carlo win probability: 22.55%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:01,508 - INFO - === Round 60 Started ===
+2025-04-04 18:06:01,510 - ERROR - 
+=== Hole Cards ===Your hand: Ts 4sMonte Carlo win probability: 26.95%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:02,705 - INFO - === Round 61 Started ===
+2025-04-04 18:06:02,706 - ERROR - 
+=== Hole Cards ===Your hand: 9d 2cMonte Carlo win probability: 18.15%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:03,952 - INFO - === Round 62 Started ===
+2025-04-04 18:06:03,953 - ERROR - 
+=== Hole Cards ===Your hand: 4c QcMonte Carlo win probability: 28.45%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:06,035 - INFO - === Round 63 Started ===
+2025-04-04 18:06:06,036 - ERROR - 
+=== Hole Cards ===Your hand: Qd 4dMonte Carlo win probability: 26.85%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:12,307 - INFO - === Round 64 Started ===
+2025-04-04 18:06:12,311 - ERROR - 
+=== Hole Cards ===Your hand: Ad AsMonte Carlo win probability: 65.45%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot raises to 125.0
+=== Flop ===7c Js ThMonte Carlo win probability: 59.35%
+=== FLOP Betting Round ===Pot: 175.0Your stack: 29865.0Opponent checksBot folds
+=== Hand Complete ===Final pot: 175.0Your final stack: 29865.0
+=== New Game Started ===
+2025-04-04 18:06:14,851 - INFO - === Round 65 Started ===
+2025-04-04 18:06:14,854 - ERROR - 
+=== Hole Cards ===Your hand: 5d 4sMonte Carlo win probability: 22.45%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:18,976 - INFO - === Round 66 Started ===
+2025-04-04 18:06:18,978 - ERROR - 
+=== Hole Cards ===Your hand: 5d 4hMonte Carlo win probability: 21.00%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:20,387 - INFO - === Round 67 Started ===
+2025-04-04 18:06:20,390 - ERROR - 
+=== Hole Cards ===Your hand: Kh QcMonte Carlo win probability: 39.65%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:21,942 - INFO - === Round 68 Started ===
+2025-04-04 18:06:21,943 - ERROR - 
+=== Hole Cards ===Your hand: Kd 9cMonte Carlo win probability: 31.35%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:23,284 - INFO - === Round 69 Started ===
+2025-04-04 18:06:23,284 - ERROR - 
+=== Hole Cards ===Your hand: 4s 7sMonte Carlo win probability: 24.15%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:24,586 - INFO - === Round 70 Started ===
+2025-04-04 18:06:24,587 - ERROR - 
+=== Hole Cards ===Your hand: 6d 4hMonte Carlo win probability: 19.30%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:26,956 - INFO - === Round 71 Started ===
+2025-04-04 18:06:26,959 - ERROR - 
+=== Hole Cards ===Your hand: 4h 6cMonte Carlo win probability: 21.40%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:29,924 - INFO - === Round 72 Started ===
+2025-04-04 18:06:29,974 - ERROR - 
+=== Hole Cards ===Your hand: Jc 6hMonte Carlo win probability: 25.35%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:31,473 - INFO - === Round 73 Started ===
+2025-04-04 18:06:31,475 - ERROR - 
+=== Hole Cards ===Your hand: Ts KdMonte Carlo win probability: 36.60%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:32,919 - INFO - === Round 74 Started ===
+2025-04-04 18:06:32,920 - ERROR - 
+=== Hole Cards ===Your hand: 4s 7cMonte Carlo win probability: 21.65%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:35,126 - INFO - === Round 75 Started ===
+2025-04-04 18:06:35,128 - ERROR - 
+=== Hole Cards ===Your hand: 5c 9hMonte Carlo win probability: 22.45%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:36,796 - INFO - === Round 76 Started ===
+2025-04-04 18:06:36,805 - ERROR - 
+=== Hole Cards ===Your hand: 5d 6dMonte Carlo win probability: 25.95%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:38,304 - INFO - === Round 77 Started ===
+2025-04-04 18:06:38,304 - ERROR - 
+=== Hole Cards ===Your hand: 9d KsMonte Carlo win probability: 33.10%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:39,672 - INFO - === Round 78 Started ===
+2025-04-04 18:06:39,673 - ERROR - 
+=== Hole Cards ===Your hand: 5d 7hMonte Carlo win probability: 23.90%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:42,912 - INFO - === Round 79 Started ===
+2025-04-04 18:06:42,912 - ERROR - 
+=== Hole Cards ===Your hand: Kc KsMonte Carlo win probability: 60.10%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot raises to 225.0
+=== Flop ===Kd Ac 9hMonte Carlo win probability: 94.55%
+=== FLOP Betting Round ===Pot: 315.0Your stack: 29765.0Opponent bets 157.5Bot folds
+=== Hand Complete ===Final pot: 472.5Your final stack: 29765.0
+=== New Game Started ===
+2025-04-04 18:06:44,744 - INFO - === Round 80 Started ===
+2025-04-04 18:06:44,745 - ERROR - 
+=== Hole Cards ===Your hand: 4d QdMonte Carlo win probability: 30.75%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:48,304 - INFO - === Round 81 Started ===
+2025-04-04 18:06:48,306 - ERROR - 
+=== Hole Cards ===Your hand: Ac 7cMonte Carlo win probability: 34.70%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:49,758 - INFO - === Round 82 Started ===
+2025-04-04 18:06:49,758 - ERROR - 
+=== Hole Cards ===Your hand: 9s AsMonte Carlo win probability: 35.50%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:51,726 - INFO - === Round 83 Started ===
+2025-04-04 18:06:51,734 - ERROR - 
+=== Hole Cards ===Your hand: 9h KdMonte Carlo win probability: 34.35%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:06:54,585 - INFO - === Round 84 Started ===
+2025-04-04 18:06:54,586 - ERROR - 
+=== Hole Cards ===Your hand: 4s AsMonte Carlo win probability: 33.20%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:07:01,473 - INFO - === Round 85 Started ===
+2025-04-04 18:07:01,475 - ERROR - 
+=== Hole Cards ===Your hand: 7d 7hMonte Carlo win probability: 37.75%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot raises to 125.0
+=== Flop ===Jc Ac 4sMonte Carlo win probability: 32.60%
+=== FLOP Betting Round ===Pot: 175.0Your stack: 29865.0Opponent checksBot folds
+=== Hand Complete ===Final pot: 175.0Your final stack: 29865.0
+=== New Game Started ===
+2025-04-04 18:07:06,175 - INFO - === Round 86 Started ===
+2025-04-04 18:07:06,176 - ERROR - 
+=== Hole Cards ===Your hand: Ts 2cMonte Carlo win probability: 20.85%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:07:08,264 - INFO - === Round 87 Started ===
+2025-04-04 18:07:08,273 - ERROR - 
+=== Hole Cards ===Your hand: Qc 5hMonte Carlo win probability: 25.30%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:07:29,207 - INFO - === Round 88 Started ===
+2025-04-04 18:07:30,345 - ERROR - 
+=== Hole Cards ===Your hand: Ah 2cMonte Carlo win probability: 29.50%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:07:36,660 - INFO - === Round 89 Started ===
+2025-04-04 18:07:37,499 - ERROR - 
+=== Hole Cards ===Your hand: Ac 2cMonte Carlo win probability: 32.00%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:07:40,515 - INFO - === Round 90 Started ===
+2025-04-04 18:07:40,530 - ERROR - 
+=== Hole Cards ===Your hand: Kd 5sMonte Carlo win probability: 30.15%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:07:42,163 - INFO - === Round 91 Started ===
+2025-04-04 18:07:42,163 - ERROR - 
+=== Hole Cards ===Your hand: 2s 7sMonte Carlo win probability: 22.50%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:07:44,815 - INFO - === Round 92 Started ===
+2025-04-04 18:07:44,816 - ERROR - 
+=== Hole Cards ===Your hand: 8c KsMonte Carlo win probability: 30.50%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:07:46,496 - INFO - === Round 93 Started ===
+2025-04-04 18:07:46,498 - ERROR - 
+=== Hole Cards ===Your hand: 6c 7sMonte Carlo win probability: 24.30%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:07:48,013 - INFO - === Round 94 Started ===
+2025-04-04 18:07:48,013 - ERROR - 
+=== Hole Cards ===Your hand: Ah 6dMonte Carlo win probability: 31.55%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:07:51,858 - INFO - === Round 95 Started ===
+2025-04-04 18:07:51,861 - ERROR - 
+=== Hole Cards ===Your hand: 7d AcMonte Carlo win probability: 32.80%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:07:55,293 - INFO - === Round 96 Started ===
+2025-04-04 18:07:55,294 - ERROR - 
+=== Hole Cards ===Your hand: 8h 2hMonte Carlo win probability: 23.45%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:07:56,678 - INFO - === Round 97 Started ===
+2025-04-04 18:07:56,681 - ERROR - 
+=== Hole Cards ===Your hand: 2h JsMonte Carlo win probability: 21.40%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:08:02,681 - INFO - === Round 98 Started ===
+2025-04-04 18:08:02,681 - ERROR - 
+=== Hole Cards ===Your hand: Ad AsMonte Carlo win probability: 64.50%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot raises to 125.0
+=== Flop ===2d 7d 4dMonte Carlo win probability: 75.70%
+=== FLOP Betting Round ===Pot: 175.0Your stack: 29865.0Opponent bets 87.5Bot folds
+=== Hand Complete ===Final pot: 262.5Your final stack: 29865.0
+=== New Game Started ===
+2025-04-04 18:08:15,425 - INFO - === Round 99 Started ===
+2025-04-04 18:08:15,840 - ERROR - 
+=== Hole Cards ===Your hand: 4h JdMonte Carlo win probability: 21.90%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:08:19,843 - INFO - === Round 100 Started ===
+2025-04-04 18:08:19,844 - ERROR - 
+=== Hole Cards ===Your hand: Qd JsMonte Carlo win probability: 35.00%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 18:08:21,635 - INFO - === Game Complete ===
+2025-04-04 18:08:21,640 - INFO - Thanks for playing!
+2025-04-04 18:08:21,659 - INFO - Session data saved to logs\geckobot_20250404_180347_data.json
+2025-04-04 18:08:21,750 - ERROR - 
+=== Hole Cards ===Your hand: 8h QhMonte Carlo win probability: 34.70%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990Session data saved to: logs\geckobot_20250404_180347_data.jsonFile exists: True

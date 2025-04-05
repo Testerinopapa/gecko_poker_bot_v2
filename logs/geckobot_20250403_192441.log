@@ -1,0 +1,23 @@
+2025-04-03 19:24:41,228 - INFO - === GeckoBot Logging Session 20250403_192441 Started ===
+2025-04-03 19:24:41,243 - INFO - Starting logger test
+2025-04-03 19:24:41,263 - INFO - === Round 1 Started ===
+2025-04-03 19:24:41,267 - INFO - === Hand 1 Started ===
+2025-04-03 19:24:41,267 - INFO - Hole cards: Ah Kh
+2025-04-03 19:24:41,267 - INFO - Small Blind: 10
+2025-04-03 19:24:41,268 - INFO - Big Blind: 20
+2025-04-03 19:24:41,268 - INFO - === PREFLOP Betting Round ===
+2025-04-03 19:24:41,268 - INFO - Button raises 60
+2025-04-03 19:24:41,279 - INFO - Bot calls 60
+2025-04-03 19:24:41,319 - INFO - Pot size: 140
+2025-04-03 19:24:41,362 - INFO - FLOP cards: 2h 7d Jc
+2025-04-03 19:24:41,371 - INFO - FLOP win probability: 42.00%
+2025-04-03 19:24:41,372 - INFO - === FLOP Betting Round ===
+2025-04-03 19:24:41,373 - INFO - Button checks
+2025-04-03 19:24:41,486 - INFO - Bot bets 70
+2025-04-03 19:24:41,528 - INFO - Button folds
+2025-04-03 19:24:41,547 - INFO - Pot size: 210
+2025-04-03 19:24:41,549 - INFO - === Hand 1 Complete ===
+2025-04-03 19:24:41,550 - INFO - Final pot: 210
+2025-04-03 19:24:41,551 - INFO - Hero stack: 30000
+2025-04-03 19:24:41,553 - INFO - Session data saved to logs\geckobot_20250403_192441_data.json
+2025-04-03 19:24:41,570 - ERROR - Log files created: ['geckobot_20250403_192014.log', 'geckobot_20250403_192014_data.json', 'geckobot_20250403_192014_structured.log', 'geckobot_20250403_192441.log', 'geckobot_20250403_192441_data.json', 'geckobot_20250403_192441_structured.log', 'log.csv']Logger test completed successfully!

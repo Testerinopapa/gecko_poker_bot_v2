@@ -1,0 +1,21 @@
+2025-04-03 22:25:33,371 - INFO - === GeckoBot Logging Session 20250403_222533 Started ===
+2025-04-03 22:25:33,384 - INFO - === Starting GeckoBot Poker Game ===
+2025-04-03 22:25:33,394 - INFO - === Round 1 Started ===
+2025-04-03 22:25:33,400 - ERROR - Logger initialized with session ID: 20250403_222533Log directory: logsLog directory exists: True
+=== New Game Started ===
+2025-04-03 22:25:35,559 - ERROR - 
+=== Hole Cards ===Your hand: 3s 3hMonte Carlo win probability: 27.05%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot raises to 125.0
+=== Flop ===5s Jd 8hMonte Carlo win probability: 23.90%
+=== FLOP Betting Round ===Pot: 175.0Your stack: 29865.0Opponent checks
+2025-04-03 22:25:35,563 - ERROR - Traceback (most recent call last):
+2025-04-03 22:25:35,566 - ERROR -   File "C:\Users\null\gecko_poker_bot_v2\main.py", line 127, in <module>
+2025-04-03 22:25:35,601 - ERROR - main()  File "C:\Users\null\gecko_poker_bot_v2\main.py", line 114, in main
+2025-04-03 22:25:35,647 - ERROR - runner.run_hand()  File "C:\Users\null\gecko_poker_bot_v2\game_runner.py", line 66, in run_hand
+2025-04-03 22:25:35,668 - ERROR - if self._run_betting_round(Street.FLOP):  File "C:\Users\null\gecko_poker_bot_v2\game_runner.py", line 205, in _run_betting_round
+2025-04-03 22:25:35,746 - ERROR - action, bet_size = self.bot.make_decision()  File "C:\Users\null\gecko_poker_bot_v2\gecko_bot.py", line 30, in make_decision
+2025-04-03 22:25:35,749 - ERROR - return self._make_flop_decision()  File "C:\Users\null\gecko_poker_bot_v2\gecko_bot.py", line 156, in _make_flop_decision
+2025-04-03 22:25:35,784 - ERROR - if self._facing_cbet():  File "C:\Users\null\gecko_poker_bot_v2\gecko_bot.py", line 438, in _facing_cbet
+2025-04-03 22:25:35,786 - ERROR - preflop_raisers = [p for p in self.table_state.players.values()  File "C:\Users\null\gecko_poker_bot_v2\gecko_bot.py", line 439, in <listcomp>
+2025-04-03 22:25:35,846 - ERROR - if p.preflop_action == Action.RAISE]AttributeError: 'Player' object has no attribute 'preflop_action'

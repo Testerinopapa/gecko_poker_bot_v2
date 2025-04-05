@@ -1,0 +1,76 @@
+2025-04-04 15:39:28,885 - INFO - === GeckoBot Logging Session 20250404_153928 Started ===
+2025-04-04 15:39:29,103 - INFO - === Starting GeckoBot Poker Game ===
+2025-04-04 15:39:29,104 - INFO - === Round 1 Started ===
+2025-04-04 15:39:29,105 - ERROR - Logger initialized with session ID: 20250404_153928Log directory: logsLog directory exists: True
+=== New Game Started ===
+2025-04-04 15:39:33,454 - INFO - === Round 2 Started ===
+2025-04-04 15:39:33,479 - ERROR - 
+=== Hole Cards ===Your hand: Kc 4hMonte Carlo win probability: 30.20%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 15:39:37,219 - INFO - === Round 3 Started ===
+2025-04-04 15:39:37,221 - ERROR - 
+=== Hole Cards ===Your hand: 6s 7cMonte Carlo win probability: 22.50%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 15:39:39,537 - INFO - === Round 4 Started ===
+2025-04-04 15:39:39,555 - ERROR - 
+=== Hole Cards ===Your hand: Qc 5sMonte Carlo win probability: 24.85%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 15:39:43,816 - INFO - === Round 5 Started ===
+2025-04-04 15:39:43,836 - ERROR - 
+=== Hole Cards ===Your hand: 3h 4hMonte Carlo win probability: 22.75%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 15:39:47,389 - INFO - === Round 6 Started ===
+2025-04-04 15:39:47,405 - ERROR - 
+=== Hole Cards ===Your hand: 4s QhMonte Carlo win probability: 25.55%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 15:39:50,706 - INFO - === Round 7 Started ===
+2025-04-04 15:39:50,733 - ERROR - 
+=== Hole Cards ===Your hand: 5c 6cMonte Carlo win probability: 26.90%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 15:39:54,585 - INFO - === Round 8 Started ===
+2025-04-04 15:39:54,586 - ERROR - 
+=== Hole Cards ===Your hand: Qh 5hMonte Carlo win probability: 31.65%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 15:39:58,020 - INFO - === Round 9 Started ===
+2025-04-04 15:39:58,022 - ERROR - 
+=== Hole Cards ===Your hand: Kd 7sMonte Carlo win probability: 29.45%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 15:39:59,937 - INFO - === Round 10 Started ===
+2025-04-04 15:39:59,939 - ERROR - 
+=== Hole Cards ===Your hand: 6c QdMonte Carlo win probability: 25.75%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-04 15:40:02,586 - INFO - === Game Complete ===
+2025-04-04 15:40:02,606 - INFO - Thanks for playing!
+2025-04-04 15:40:02,654 - INFO - Session data saved to logs\geckobot_20250404_153928_data.json
+2025-04-04 15:40:02,738 - ERROR - 
+=== Hole Cards ===Your hand: Th QsMonte Carlo win probability: 34.45%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button raises to 60Bot folds
+=== Hand Complete ===Final pot: 90.0Your final stack: 29990Session data saved to: logs\geckobot_20250404_153928_data.jsonFile exists: True

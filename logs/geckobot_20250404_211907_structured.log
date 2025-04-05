@@ -1,0 +1,1 @@
+[{"type": "action", "data": {"player": "Button", "action": "calls", "amount": 20, "time": 1743812348.5150125}, "hand_id": 1, "street": "PREFLOP", "timestamp": 1743812348.5150125}, {"type": "action", "data": {"player": "Bot", "action": "folds", "amount": null, "time": 1743812348.7056613}, "hand_id": 1, "street": "PREFLOP", "timestamp": 1743812348.7056613}]

@@ -12,13 +12,16 @@ class GeckoBot:
         self.position_manager = PositionManager()
         self.hand_evaluator = HandEvaluator()
         self.board_analyzer = BoardAnalyzer()
+
+        # We'll keep the action_history for backward compatibility,
+        # but we'll primarily use the betting_symbols for decision making
         self.action_history = {
             Street.PREFLOP: [],
             Street.FLOP: [],
             Street.TURN: [],
             Street.RIVER: []
         }
-        
+
     def make_decision(self) -> Tuple[Action, float]:
         """Main decision point - routes to appropriate street logic"""
         if self.table_state.current_street == Street.PREFLOP:
@@ -36,18 +39,55 @@ class GeckoBot:
             self.table_state.hero_cards,
             []  # Empty board for preflop
         )
-        
+
         hero_pos = self.table_state.get_hero_position()
         hand = self._get_hand_string()
-        
+
+        # Get betting action symbols and history symbols
+        betting_symbols = self.table_state.betting_symbols
+        history_symbols = self.table_state.history_symbols
+
+        # Check for 3-bet and 4-bet situations
+        is_three_bet = betting_symbols.is_three_bet()
+        is_four_bet = betting_symbols.is_four_bet()
+        raises_since_last_play = betting_symbols.raises_since_last_play(Street.PREFLOP)
+
+        # Get history information
+        num_raises_preflop = history_symbols.get_number_of_raises_before_flop()
+        bots_last_action = history_symbols.get_bots_last_preflop_action()
+        opponents_last_action = history_symbols.get_opponents_last_action()
+
+        # Get SPR category
+        spr_category = self.table_state.get_spr_category()
+        is_short_stacked = self.table_state.is_short_stacked()
+        is_deep_stacked = self.table_state.is_deep_stacked()
+
         # Premium hands
         if hand_strength in [HandStrength.OVERPAIR_STRONG]:
             if self._facing_raise():
                 if self._multiple_raisers():
-                    return self._raise_decision(4)  # 4x reraise vs multiple
-                return self._raise_decision(3)  # 3x reraise vs single
-            return self._raise_decision(2.5)  # 2.5x open
-            
+                    # Adjust based on stack depth
+                    if is_short_stacked:
+                        return self._raise_decision(1.0)  # All-in or close to it
+                    elif spr_category in ['very_low', 'low']:
+                        return self._raise_decision(4.5)  # More aggressive with low SPR
+                    else:
+                        return self._raise_decision(4)  # 4x reraise vs multiple
+                # Single raiser
+                if is_short_stacked:
+                    return self._raise_decision(1.0)  # All-in or close to it
+                elif spr_category in ['very_low', 'low']:
+                    return self._raise_decision(3.5)  # More aggressive with low SPR
+                else:
+                    return self._raise_decision(3)  # 3x reraise vs single
+            # Opening
+            if is_short_stacked:
+                return self._raise_decision(1.0)  # All-in or close to it
+            elif is_deep_stacked:
+                return self._raise_decision(2.0)  # More conservative with deep stacks
+            else:
+                return self._raise_decision(2.5)  # 2.5x open
+
         # Strong hands
         if hand_strength in [HandStrength.OVERPAIR_WEAK, HandStrength.TOP_PAIR_GOOD_KICKER]:
             if self._facing_raise():
@@ -57,29 +97,33 @@ class GeckoBot:
                     return (Action.FOLD, 0.0)
                 return self._raise_decision(3)
             return self._raise_decision(2.5)
-            
+
         # Medium hands
         if hand_strength in [HandStrength.TOP_PAIR_WEAK_KICKER, HandStrength.MIDDLE_PAIR_GOOD_KICKER]:
             if self._facing_raise():
                 if self._getting_good_odds() and not self._multiple_raisers():
                     return (Action.CALL, self.table_state.current_bet)
                 return (Action.FOLD, 0.0)
-            if self._in_position():
+            if self.table_state.is_late_position() or self.table_state.is_last_to_act():
                 return self._raise_decision(2.5)
+            if self.table_state.is_middle_position() and not self.table_state.is_first_to_act():
+                return (Action.CALL, self.table_state.current_bet)
             return (Action.FOLD, 0.0)
-            
+
         # Speculative hands
         if hand_strength.is_draw:
             if self._facing_raise():
-                if (self._getting_good_odds() and 
-                    self._good_implied_odds() and 
+                if (self._getting_good_odds() and
+                    self._good_implied_odds() and
                     not self._multiple_raisers()):
                     return (Action.CALL, self.table_state.current_bet)
                 return (Action.FOLD, 0.0)
-            if self._in_position():
+            if self.table_state.is_late_position() or self.table_state.is_last_to_act():
                 return self._raise_decision(2.5)
+            if self.table_state.is_middle_position() and self.table_state.is_in_position_vs_callers():
+                return (Action.CALL, self.table_state.current_bet)
             return (Action.FOLD, 0.0)
-            
+
         return (Action.FOLD, 0.0)
 
     def _make_flop_decision(self) -> Tuple[Action, float]:
@@ -88,31 +132,74 @@ class GeckoBot:
             self.table_state.hero_cards,
             self.table_state.community_cards
         )
-        
+
         board_texture = self.board_analyzer.analyze_board(self.table_state.community_cards)
-        
+
+        # Get history symbols
+        history_symbols = self.table_state.history_symbols
+
+        # Get history information
+        bots_last_preflop_action = history_symbols.get_bots_last_preflop_action()
+        bots_last_flop_action = history_symbols.get_bots_last_flop_action()
+        num_raises_preflop = history_symbols.get_number_of_raises_before_flop()
+        num_raises_flop = history_symbols.get_number_of_raises_on_flop()
+
+        # Get SPR information
+        spr_category = self.table_state.get_spr_category()
+        is_short_stacked = self.table_state.is_short_stacked()
+        is_deep_stacked = self.table_state.is_deep_stacked()
+        is_committed = self.table_state.is_committed(self.table_state.pot_size * 0.5)  # Check if committed with half pot bet
+
         # First to act
         if not self._facing_bet():
             # Strong hands always bet
             if hand_strength.is_strong_made_hand:
+                # Calculate optimal bet size based on SPR and hand strength
+                optimal_bet_size = self.table_state.calculate_optimal_bet_size(0.8)  # Strong hand = 0.8 strength
+
+                # If we're committed, be more aggressive
+                if is_committed:
+                    return self._raise_decision(optimal_bet_size * 1.2)  # 20% larger than optimal
+
+                # If we're short stacked, be more aggressive
+                if is_short_stacked:
+                    return self._raise_decision(1.0)  # Pot-sized bet
+
+                # Adjust bet size based on board texture
                 if board_texture['texture'] == 'DRY':
-                    return self._raise_decision(0.5)  # Half pot on dry boards
-                return self._raise_decision(0.75)  # 3/4 pot on wet boards
-                
+                    return self._raise_decision(optimal_bet_size * 0.8)  # Smaller bet on dry boards
+                else:
+                    return self._raise_decision(optimal_bet_size * 1.1)  # Larger bet on wet boards
+
             # Medium hands bet in position or on dry boards
             if hand_strength.is_medium_made_hand:
-                if self._in_position() or board_texture['texture'] == 'DRY':
-                    return self._raise_decision(0.5)
+                # Calculate optimal bet size based on SPR and hand strength
+                optimal_bet_size = self.table_state.calculate_optimal_bet_size(0.6)  # Medium hand = 0.6 strength
+
+                # If we're deep stacked, be more conservative
+                if is_deep_stacked:
+                    optimal_bet_size *= 0.8  # 20% smaller than optimal
+
+                # If we're in position or the board is dry, bet
+                if (self.table_state.is_late_position() or
+                    self.table_state.is_last_to_act() or
+                    board_texture['texture'] == 'DRY'):
+                    return self._raise_decision(optimal_bet_size)
+
+                # Otherwise, check
                 return (Action.CHECK, 0.0)
-                
+
             # Strong draws bet on wet boards in position
             if hand_strength.is_strong_draw:
-                if self._in_position() and board_texture['texture'] != 'DRY':
+                if ((self.table_state.is_late_position() or self.table_state.is_last_to_act()) and
+                    board_texture['texture'] != 'DRY'):
+                    return self._raise_decision(0.5)
+                if self.table_state.is_in_position_vs_aggressor() and self.table_state.is_in_position_vs_callers():
                     return self._raise_decision(0.5)
                 return (Action.CHECK, 0.0)
-                
+
             return (Action.CHECK, 0.0)
-            
+
         # Facing a bet
         if self._facing_donk_bet():
             if hand_strength.is_strong_made_hand:
@@ -126,7 +213,7 @@ class GeckoBot:
             if hand_strength.is_strong_draw and self._getting_odds():
                 return (Action.CALL, self.table_state.current_bet)
             return (Action.FOLD, 0.0)
-                
+
         if self._facing_cbet():
             # Defend wider vs c-bets
             if hand_strength.is_strong_made_hand:
@@ -139,14 +226,14 @@ class GeckoBot:
                 if self._in_position():
                     return self._raise_decision(2.5)
                 return (Action.CALL, self.table_state.current_bet)
-            if (hand_strength.is_strong_draw or 
+            if (hand_strength.is_strong_draw or
                 (hand_strength.is_medium_draw and self._in_position())):
                 if self._getting_odds():
                     if board_texture['texture'] != 'DRY':
                         return self._raise_decision(2.5)
                     return (Action.CALL, self.table_state.current_bet)
             return (Action.FOLD, 0.0)
-            
+
         return (Action.FOLD, 0.0)
 
     def _make_turn_decision(self) -> Tuple[Action, float]:
@@ -155,47 +242,56 @@ class GeckoBot:
             self.table_state.hero_cards,
             self.table_state.community_cards
         )
-        
+
         board_texture = self.board_analyzer.analyze_board(self.table_state.community_cards)
-        
+
+        # Get history symbols
+        history_symbols = self.table_state.history_symbols
+
+        # Get history information
+        bots_last_flop_action = history_symbols.get_bots_last_flop_action()
+        bots_last_turn_action = history_symbols.get_bots_last_turn_action()
+        num_raises_flop = history_symbols.get_number_of_raises_on_flop()
+        num_raises_turn = history_symbols.get_number_of_raises_on_turn()
+
         # First to act
         if not self._facing_bet():
             if hand_strength.is_strong_made_hand:
                 if board_texture['texture'] == 'DRY':
                     return self._raise_decision(0.66)  # 2/3 pot on dry boards
                 return self._raise_decision(0.75)  # 3/4 pot on wet boards
-                
+
             if hand_strength.is_medium_made_hand and self._in_position():
                 if board_texture['texture'] == 'DRY':
                     return self._raise_decision(0.5)
                 return (Action.CHECK, 0.0)
-                
+
             if hand_strength.is_strong_draw and self._in_position():
                 if board_texture['texture'] != 'DRY':
                     return self._raise_decision(0.5)
                 return (Action.CHECK, 0.0)
-                
+
             return (Action.CHECK, 0.0)
-            
+
         # Facing a bet
         if hand_strength.is_strong_made_hand:
             if board_texture['texture'] == 'DRY':
                 return self._raise_decision(2.5)
             return self._raise_decision(3)
-            
+
         if hand_strength.is_medium_made_hand:
             if board_texture['texture'] == 'DRY':
                 return (Action.CALL, self.table_state.current_bet)
             if self._in_position():
                 return self._raise_decision(2.5)
             return (Action.CALL, self.table_state.current_bet)
-            
+
         if hand_strength.is_strong_draw:
             if self._getting_odds():
                 if board_texture['texture'] != 'DRY':
                     return self._raise_decision(2.5)
                 return (Action.CALL, self.table_state.current_bet)
-                
+
         return (Action.FOLD, 0.0)
 
     def _make_river_decision(self) -> Tuple[Action, float]:
@@ -204,55 +300,75 @@ class GeckoBot:
             self.table_state.hero_cards,
             self.table_state.community_cards
         )
-        
+
         board_texture = self.board_analyzer.analyze_board(self.table_state.community_cards)
-        
+
+        # Get history symbols
+        history_symbols = self.table_state.history_symbols
+
+        # Get history information
+        bots_last_turn_action = history_symbols.get_bots_last_turn_action()
+        bots_last_river_action = history_symbols.get_bots_last_river_action()
+        num_raises_turn = history_symbols.get_number_of_raises_on_turn()
+        num_raises_river = history_symbols.get_number_of_raises_on_river()
+
         # First to act
         if not self._facing_bet():
             if hand_strength.value >= HandStrength.TWO_PAIR_TOP.value:
                 if board_texture['texture'] == 'DRY':
                     return self._raise_decision(0.75)
                 return self._raise_decision(1.0)  # Pot-sized bet
-                
+
             if hand_strength.value >= HandStrength.TOP_PAIR_GOOD_KICKER.value:
                 if board_texture['texture'] == 'DRY' and self._in_position():
                     return self._raise_decision(0.5)
                 return (Action.CHECK, 0.0)
-                
+
             return (Action.CHECK, 0.0)
-            
+
         # Facing a bet
         if hand_strength.value >= HandStrength.SET.value:
             if board_texture['texture'] == 'DRY':
                 return self._raise_decision(2.5)
             return self._raise_decision(3)
-            
+
         if hand_strength.value >= HandStrength.TWO_PAIR_TOP_AND_MIDDLE.value:
             if board_texture['texture'] == 'DRY':
                 return (Action.CALL, self.table_state.current_bet)
             if self._in_position():
                 return self._raise_decision(2.5)
             return (Action.CALL, self.table_state.current_bet)
-            
+
         if (hand_strength.value >= HandStrength.TOP_PAIR_GOOD_KICKER.value and
             board_texture['texture'] == 'DRY' and
             self._getting_good_odds()):
             return (Action.CALL, self.table_state.current_bet)
-            
+
         return (Action.FOLD, 0.0)
 
     # Helper methods
     def _getting_odds(self) -> bool:
         """Check if we're getting the right pot odds"""
         pot_odds = self.table_state.get_pot_odds(self.table_state.current_bet)
+
+        # Calculate equity from outs
+        equity_from_outs = self.table_state.get_equity_from_outs()
+
+        # If we have a good draw, compare pot odds to equity from outs
         if self._have_good_draw():
-            return pot_odds >= 0.2  # Need 20% equity for draws
+            return pot_odds <= equity_from_outs or pot_odds >= 0.2  # Need 20% equity for draws
+
         return pot_odds >= 0.3  # Need 30% equity for calls
 
     def _getting_good_odds(self) -> bool:
         """Check if we're getting good pot odds"""
         pot_odds = self.table_state.get_pot_odds(self.table_state.current_bet)
-        return pot_odds >= 0.25  # Need 25% equity for good odds
+
+        # Calculate equity from outs
+        equity_from_outs = self.table_state.get_equity_from_outs()
+
+        # Compare pot odds to equity from outs
+        return pot_odds <= equity_from_outs or pot_odds >= 0.25  # Need 25% equity for good odds
 
     def _in_position(self) -> bool:
         """Check if we're in position"""
@@ -269,8 +385,8 @@ class GeckoBot:
 
     def _facing_raise(self) -> bool:
         """Check if facing a raise"""
-        return any(p.last_action == Action.RAISE 
-                  for p in self.table_state.players.values())
+        # Use betting action symbols to check if there are any raises on the current street
+        return self.table_state.betting_symbols.raises_since_last_play(self.table_state.current_street) > 0
 
     def _facing_bet(self) -> bool:
         """Check if facing a bet"""
@@ -280,18 +396,26 @@ class GeckoBot:
         """Check if facing a donk bet"""
         if not self._facing_bet():
             return False
-        return self.table_state.last_aggressor != self.table_state.button_seat
+        # Use betting action symbols to check if we're facing a donk bet
+        return self.table_state.betting_symbols.is_donk_bet()
 
     def _facing_cbet(self) -> bool:
         """Check if facing a continuation bet"""
         if not self._facing_bet():
             return False
-        return self.table_state.last_aggressor == self.table_state.button_seat
+        # Use betting action symbols to check if we're facing a continuation bet
+        return self.table_state.betting_symbols.is_continuation_bet()
 
     def _multiple_raisers(self) -> bool:
         """Check if there are multiple preflop raisers"""
-        preflop_raisers = [p for p in self.table_state.players.values() if p.in_hand]
-        return any(p.last_action == Action.RAISE for p in preflop_raisers)
+        # Use betting action symbols to check if there are multiple raises on the current street
+        street = self.table_state.current_street
+        # Count raises on the current street
+        raise_count = 0
+        for action_data in self.table_state.betting_symbols.actions_by_street[street]:
+            if action_data['action'] == Action.RAISE:
+                raise_count += 1
+        return raise_count >= 2
 
     def _good_implied_odds(self) -> bool:
         """Check if we have good implied odds"""
@@ -300,21 +424,29 @@ class GeckoBot:
 
     def _have_good_draw(self) -> bool:
         """Check if we have a good drawing hand"""
+        # First check using hand strength
         hand_strength = self.hand_evaluator.evaluate_hand_strength(
             self.table_state.hero_cards,
             self.table_state.community_cards
         )
-        return hand_strength.is_strong_draw or hand_strength.is_medium_draw
+
+        # Then check using outs calculator
+        equity_from_outs = self.table_state.get_equity_from_outs()
+
+        # Consider it a good draw if either condition is met
+        return (hand_strength.is_strong_draw or
+                hand_strength.is_medium_draw or
+                equity_from_outs >= 0.25)  # 25% equity from outs is a good draw
 
     def _get_hand_string(self) -> str:
         """Convert hole cards to standard notation"""
         if not self.table_state.hero_cards[0] or not self.table_state.hero_cards[1]:
             return ""
-            
+
         card1, card2 = self.table_state.hero_cards
         rank1, rank2 = card1[0], card2[0]
         suited = card1[1] == card2[1]
-        
+
         if rank1 == rank2:
             return rank1 + rank2
         else:
@@ -322,10 +454,27 @@ class GeckoBot:
             return ranks[0] + ranks[1] + ('s' if suited else 'o')
 
     def _raise_decision(self, multiplier: float) -> Tuple[Action, float]:
-        """Calculate raise size based on pot and current bet"""
+        """Calculate raise size based on pot, current bet, and SPR"""
         min_raise = self.table_state.min_raise
         pot_size = self.table_state.pot_size
-        
+
+        # Get SPR category and adjust multiplier if needed
+        spr_category = self.table_state.get_spr_category()
+
+        # Adjust multiplier based on SPR category
+        if spr_category == 'very_low':
+            # More aggressive with very low SPR
+            multiplier = min(multiplier * 1.5, 1.0)  # Cap at pot-sized bet
+        elif spr_category == 'low':
+            # Slightly more aggressive with low SPR
+            multiplier = min(multiplier * 1.2, 0.75)  # Cap at 3/4 pot
+        elif spr_category == 'high':
+            # More conservative with high SPR
+            multiplier = multiplier * 0.8
+        elif spr_category == 'very_high':
+            # Very conservative with very high SPR
+            multiplier = multiplier * 0.6
+
         # Calculate the raise size
         raise_size = max(
             min_raise,
@@ -334,212 +483,369 @@ class GeckoBot:
                 self.table_state.get_effective_stack()
             )
         )
-        
+
         return (Action.RAISE, raise_size)
 
     def _bot_called_before_flop(self) -> bool:
         """Check if we called preflop"""
         return Action.CALL in self.action_history[Street.PREFLOP]
-        
+
     def _bot_checked_preflop(self) -> bool:
         """Check if we checked preflop"""
         return Action.CHECK in self.action_history[Street.PREFLOP]
-        
+
     def _bot_raised_before_flop(self) -> bool:
         """Check if we raised preflop"""
         return Action.RAISE in self.action_history[Street.PREFLOP]
-        
+
     def _bot_actions_on_street(self, street: Street) -> int:
         """Count number of actions we've made on this street"""
         return len(self.action_history[street])
-        
+
     def _bot_is_last_raiser(self) -> bool:
         """Check if we were the last player to raise"""
         return (self.last_action == Action.RAISE and
-                all(p.last_action != Action.RAISE 
+                all(p.last_action != Action.RAISE
                     for p in self.table_state.players.values()
                     if p.seat != self.table_state.hero_seat))
-                    
+
     def _bot_is_aggressor(self) -> bool:
         """Check if we're the aggressor on this street"""
-        return any(action == Action.RAISE 
+        return any(action == Action.RAISE
                   for action in self.action_history[self.table_state.current_street])
-                  
+
     def _facing_float_bet(self) -> bool:
         """Check if facing a float bet (opponent bets after calling previous street)"""
         if self.table_state.current_street == Street.PREFLOP:
             return False
-            
+
         # Get the players who called last street
         callers = [p for p in self.table_state.players.values()
                   if p.previous_action == Action.CALL]
-                  
+
         # Check if any of them are betting now
         return any(p.last_action == Action.RAISE for p in callers)
-                
+
     def _facing_cbet(self) -> bool:
         """Check if facing a continuation bet"""
         if self.table_state.current_street == Street.PREFLOP:
             return False
-            
-        # Find preflop raisers
-        preflop_raisers = [p for p in self.table_state.players.values()
-                          if p.preflop_action == Action.RAISE]
-                          
-        # Check if any of them are betting now
-        return any(p.last_action == Action.RAISE for p in preflop_raisers)
+
+        # Use betting action symbols to check if we're facing a continuation bet
+        return self.table_state.betting_symbols.is_continuation_bet()
 
     def _get_preflop_raisers(self) -> List[Player]:
         """Get a list of players who raised preflop"""
+        # Use history symbols to check for preflop raises
+        preflop_history = self.table_state.history_symbols.get_preflop_action_history()
         preflop_raisers = []
-        for player in self.table_state.players:
-            if player.last_action == Action.RAISE:
-                preflop_raisers.append(player)
+
+        # Find players who raised preflop
+        for action_data in preflop_history:
+            if action_data['action'] == Action.RAISE:
+                player_name = action_data['player']
+                # Find the player in the table state
+                for seat, player in self.table_state.players.items():
+                    if (player_name == "Bot" and seat == self.table_state.hero_seat) or \
+                       (player_name == f"Player_{seat}"):
+                        preflop_raisers.append(player)
+                        break
+
         return preflop_raisers
 
     def _get_preflop_callers(self) -> List[Player]:
         """Get a list of players who called preflop"""
+        # Use history symbols to check for preflop calls
+        preflop_history = self.table_state.history_symbols.get_preflop_action_history()
         preflop_callers = []
-        for player in self.table_state.players:
-            if player.last_action == Action.CALL:
-                preflop_callers.append(player)
+
+        # Find players who called preflop
+        for action_data in preflop_history:
+            if action_data['action'] == Action.CALL:
+                player_name = action_data['player']
+                # Find the player in the table state
+                for seat, player in self.table_state.players.items():
+                    if (player_name == "Bot" and seat == self.table_state.hero_seat) or \
+                       (player_name == f"Player_{seat}"):
+                        preflop_callers.append(player)
+                        break
+
         return preflop_callers
 
     def _get_preflop_folders(self) -> List[Player]:
         """Get a list of players who folded preflop"""
+        # Use history symbols to check for preflop folds
+        preflop_history = self.table_state.history_symbols.get_preflop_action_history()
         preflop_folders = []
-        for player in self.table_state.players:
-            if player.last_action == Action.FOLD:
-                preflop_folders.append(player)
+
+        # Find players who folded preflop
+        for action_data in preflop_history:
+            if action_data['action'] == Action.FOLD:
+                player_name = action_data['player']
+                # Find the player in the table state
+                for seat, player in self.table_state.players.items():
+                    if (player_name == "Bot" and seat == self.table_state.hero_seat) or \
+                       (player_name == f"Player_{seat}"):
+                        preflop_folders.append(player)
+                        break
+
         return preflop_folders
 
     def _get_preflop_checkers(self) -> List[Player]:
         """Get a list of players who checked preflop"""
+        # Use history symbols to check for preflop checks
+        preflop_history = self.table_state.history_symbols.get_preflop_action_history()
         preflop_checkers = []
-        for player in self.table_state.players:
-            if player.last_action == Action.CHECK:
-                preflop_checkers.append(player)
+
+        # Find players who checked preflop
+        for action_data in preflop_history:
+            if action_data['action'] == Action.CHECK:
+                player_name = action_data['player']
+                # Find the player in the table state
+                for seat, player in self.table_state.players.items():
+                    if (player_name == "Bot" and seat == self.table_state.hero_seat) or \
+                       (player_name == f"Player_{seat}"):
+                        preflop_checkers.append(player)
+                        break
+
         return preflop_checkers
 
     def _get_preflop_all_in_players(self) -> List[Player]:
         """Get a list of players who went all-in preflop"""
+        # Use history symbols to check for preflop all-ins
+        preflop_history = self.table_state.history_symbols.get_preflop_action_history()
         preflop_all_in_players = []
-        for player in self.table_state.players:
-            if player.last_action == Action.ALL_IN:
-                preflop_all_in_players.append(player)
+
+        # Find players who went all-in preflop
+        for action_data in preflop_history:
+            if action_data['action'] == Action.ALL_IN:
+                player_name = action_data['player']
+                # Find the player in the table state
+                for seat, player in self.table_state.players.items():
+                    if (player_name == "Bot" and seat == self.table_state.hero_seat) or \
+                       (player_name == f"Player_{seat}"):
+                        preflop_all_in_players.append(player)
+                        break
+
         return preflop_all_in_players
 
     def _get_preflop_active_players(self) -> List[Player]:
         """Get a list of players who are still in the hand preflop"""
-        preflop_active_players = []
-        for player in self.table_state.players:
-            if player.last_action not in [Action.FOLD, Action.ALL_IN]:
-                preflop_active_players.append(player)
-        return preflop_active_players
+        # Get all players who are still in the hand
+        active_players = []
+        for seat, player in self.table_state.players.items():
+            if player.in_hand:
+                active_players.append(player)
+        return active_players
 
     def _get_preflop_aggressors(self) -> List[Player]:
         """Get a list of players who raised or went all-in preflop"""
-        preflop_aggressors = []
-        for player in self.table_state.players:
-            if player.last_action in [Action.RAISE, Action.ALL_IN]:
-                preflop_aggressors.append(player)
+        # Combine the lists of preflop raisers and all-in players
+        preflop_raisers = self._get_preflop_raisers()
+        preflop_all_in_players = self._get_preflop_all_in_players()
+
+        # Combine the lists, avoiding duplicates
+        preflop_aggressors = list(set(preflop_raisers + preflop_all_in_players))
+
         return preflop_aggressors
 
     def _get_preflop_passive_players(self) -> List[Player]:
         """Get a list of players who called or checked preflop"""
-        preflop_passive_players = []
-        for player in self.table_state.players:
-            if player.last_action in [Action.CALL, Action.CHECK]:
-                preflop_passive_players.append(player)
+        # Combine the lists of preflop callers and checkers
+        preflop_callers = self._get_preflop_callers()
+        preflop_checkers = self._get_preflop_checkers()
+
+        # Combine the lists, avoiding duplicates
+        preflop_passive_players = list(set(preflop_callers + preflop_checkers))
+
         return preflop_passive_players
 
     def _get_preflop_3betters(self) -> List[Player]:
         """Get a list of players who 3-bet preflop"""
-        preflop_3betters = []
-        for player in self.table_state.players:
-            if player.last_action == Action.RAISE and player.preflop_action_count == 2:
-                preflop_3betters.append(player)
-        return preflop_3betters
+        # Use betting action symbols to check for 3-bet situations
+        if not self.table_state.betting_symbols.is_three_bet():
+            return []
+
+        # Get preflop raisers
+        preflop_raisers = self._get_preflop_raisers()
+
+        # In a 3-bet situation, the last raiser is the 3-better
+        if preflop_raisers and self.table_state.last_aggressor is not None:
+            for seat, player in self.table_state.players.items():
+                if seat == self.table_state.last_aggressor and player in preflop_raisers:
+                    return [player]
+
+        return []
 
     def _get_preflop_4betters(self) -> List[Player]:
         """Get a list of players who 4-bet preflop"""
-        preflop_4betters = []
-        for player in self.table_state.players:
-            if player.last_action == Action.RAISE and player.preflop_action_count == 3:
-                preflop_4betters.append(player)
-        return preflop_4betters
+        # Use betting action symbols to check for 4-bet situations
+        if not self.table_state.betting_symbols.is_four_bet():
+            return []
+
+        # Get preflop raisers
+        preflop_raisers = self._get_preflop_raisers()
+
+        # In a 4-bet situation, the last raiser is the 4-better
+        if preflop_raisers and self.table_state.last_aggressor is not None:
+            for seat, player in self.table_state.players.items():
+                if seat == self.table_state.last_aggressor and player in preflop_raisers:
+                    return [player]
+
+        return []
 
     def _get_preflop_5betters(self) -> List[Player]:
         """Get a list of players who 5-bet preflop"""
-        preflop_5betters = []
-        for player in self.table_state.players:
-            if player.last_action == Action.RAISE and player.preflop_action_count == 4:
-                preflop_5betters.append(player)
-        return preflop_5betters
+        # Check if there are at least 5 raises preflop
+        if self.table_state.history_symbols.get_number_of_raises_before_flop() < 4:
+            return []
+
+        # Get preflop raisers
+        preflop_raisers = self._get_preflop_raisers()
+
+        # In a 5-bet situation, the last raiser is the 5-better
+        if preflop_raisers and self.table_state.last_aggressor is not None:
+            for seat, player in self.table_state.players.items():
+                if seat == self.table_state.last_aggressor and player in preflop_raisers:
+                    return [player]
+
+        return []
 
     def _get_preflop_6betters(self) -> List[Player]:
         """Get a list of players who 6-bet preflop"""
-        preflop_6betters = []
-        for player in self.table_state.players:
-            if player.last_action == Action.RAISE and player.preflop_action_count == 5:
-                preflop_6betters.append(player)
-        return preflop_6betters
+        # Check if there are at least 6 raises preflop
+        if self.table_state.history_symbols.get_number_of_raises_before_flop() < 5:
+            return []
+
+        # Get preflop raisers
+        preflop_raisers = self._get_preflop_raisers()
+
+        # In a 6-bet situation, the last raiser is the 6-better
+        if preflop_raisers and self.table_state.last_aggressor is not None:
+            for seat, player in self.table_state.players.items():
+                if seat == self.table_state.last_aggressor and player in preflop_raisers:
+                    return [player]
+
+        return []
 
     def _get_preflop_7betters(self) -> List[Player]:
         """Get a list of players who 7-bet preflop"""
-        preflop_7betters = []
-        for player in self.table_state.players:
-            if player.last_action == Action.RAISE and player.preflop_action_count == 6:
-                preflop_7betters.append(player)
-        return preflop_7betters
+        # Check if there are at least 7 raises preflop
+        if self.table_state.history_symbols.get_number_of_raises_before_flop() < 6:
+            return []
+
+        # Get preflop raisers
+        preflop_raisers = self._get_preflop_raisers()
+
+        # In a 7-bet situation, the last raiser is the 7-better
+        if preflop_raisers and self.table_state.last_aggressor is not None:
+            for seat, player in self.table_state.players.items():
+                if seat == self.table_state.last_aggressor and player in preflop_raisers:
+                    return [player]
+
+        return []
 
     def _get_preflop_8betters(self) -> List[Player]:
         """Get a list of players who 8-bet preflop"""
-        preflop_8betters = []
-        for player in self.table_state.players:
-            if player.last_action == Action.RAISE and player.preflop_action_count == 7:
-                preflop_8betters.append(player)
-        return preflop_8betters
+        # Check if there are at least 8 raises preflop
+        if self.table_state.history_symbols.get_number_of_raises_before_flop() < 7:
+            return []
+
+        # Get preflop raisers
+        preflop_raisers = self._get_preflop_raisers()
+
+        # In a 8-bet situation, the last raiser is the 8-better
+        if preflop_raisers and self.table_state.last_aggressor is not None:
+            for seat, player in self.table_state.players.items():
+                if seat == self.table_state.last_aggressor and player in preflop_raisers:
+                    return [player]
+
+        return []
 
     def _get_preflop_9betters(self) -> List[Player]:
         """Get a list of players who 9-bet preflop"""
-        preflop_9betters = []
-        for player in self.table_state.players:
-            if player.last_action == Action.RAISE and player.preflop_action_count == 8:
-                preflop_9betters.append(player)
-        return preflop_9betters
+        # Check if there are at least 9 raises preflop
+        if self.table_state.history_symbols.get_number_of_raises_before_flop() < 8:
+            return []
+
+        # Get preflop raisers
+        preflop_raisers = self._get_preflop_raisers()
+
+        # In a 9-bet situation, the last raiser is the 9-better
+        if preflop_raisers and self.table_state.last_aggressor is not None:
+            for seat, player in self.table_state.players.items():
+                if seat == self.table_state.last_aggressor and player in preflop_raisers:
+                    return [player]
+
+        return []
 
     def _get_preflop_10betters(self) -> List[Player]:
         """Get a list of players who 10-bet preflop"""
-        preflop_10betters = []
-        for player in self.table_state.players:
-            if player.last_action == Action.RAISE and player.preflop_action_count == 9:
-                preflop_10betters.append(player)
-        return preflop_10betters
+        # Check if there are at least 10 raises preflop
+        if self.table_state.history_symbols.get_number_of_raises_before_flop() < 9:
+            return []
+
+        # Get preflop raisers
+        preflop_raisers = self._get_preflop_raisers()
+
+        # In a 10-bet situation, the last raiser is the 10-better
+        if preflop_raisers and self.table_state.last_aggressor is not None:
+            for seat, player in self.table_state.players.items():
+                if seat == self.table_state.last_aggressor and player in preflop_raisers:
+                    return [player]
+
+        return []
 
     def _get_preflop_11betters(self) -> List[Player]:
         """Get a list of players who 11-bet preflop"""
-        preflop_11betters = []
-        for player in self.table_state.players:
-            if player.last_action == Action.RAISE and player.preflop_action_count == 10:
-                preflop_11betters.append(player)
-        return preflop_11betters
+        # Check if there are at least 11 raises preflop
+        if self.table_state.history_symbols.get_number_of_raises_before_flop() < 10:
+            return []
+
+        # Get preflop raisers
+        preflop_raisers = self._get_preflop_raisers()
+
+        # In a 11-bet situation, the last raiser is the 11-better
+        if preflop_raisers and self.table_state.last_aggressor is not None:
+            for seat, player in self.table_state.players.items():
+                if seat == self.table_state.last_aggressor and player in preflop_raisers:
+                    return [player]
+
+        return []
 
     def _get_preflop_12betters(self) -> List[Player]:
         """Get a list of players who 12-bet preflop"""
-        preflop_12betters = []
-        for player in self.table_state.players:
-            if player.last_action == Action.RAISE and player.preflop_action_count == 11:
-                preflop_12betters.append(player)
-        return preflop_12betters
+        # Check if there are at least 12 raises preflop
+        if self.table_state.history_symbols.get_number_of_raises_before_flop() < 11:
+            return []
+
+        # Get preflop raisers
+        preflop_raisers = self._get_preflop_raisers()
+
+        # In a 12-bet situation, the last raiser is the 12-better
+        if preflop_raisers and self.table_state.last_aggressor is not None:
+            for seat, player in self.table_state.players.items():
+                if seat == self.table_state.last_aggressor and player in preflop_raisers:
+                    return [player]
+
+        return []
 
     def _get_preflop_13betters(self) -> List[Player]:
         """Get a list of players who 13-bet preflop"""
-        preflop_13betters = []
-        for player in self.table_state.players:
-            if player.last_action == Action.RAISE and player.preflop_action_count == 12:
-                preflop_13betters.append(player)
-        return preflop_13betters
+        # Check if there are at least 13 raises preflop
+        if self.table_state.history_symbols.get_number_of_raises_before_flop() < 12:
+            return []
+
+        # Get preflop raisers
+        preflop_raisers = self._get_preflop_raisers()
+
+        # In a 13-bet situation, the last raiser is the 13-better
+        if preflop_raisers and self.table_state.last_aggressor is not None:
+            for seat, player in self.table_state.players.items():
+                if seat == self.table_state.last_aggressor and player in preflop_raisers:
+                    return [player]
+
+        return []
 
     def _get_preflop_14betters(self) -> List[Player]:
         """Get a list of players who 14-bet preflop"""
@@ -1415,9 +1721,5 @@ class GeckoBot:
 
     def _in_position(self) -> bool:
         """Check if we're in position"""
-        pos = self.table_state.get_hero_position()
-        if self.table_state.total_players == 3:
-            # In 3-handed play, SB is in position against BB and Button
-            return pos in [Position.BUTTON, Position.SMALL_BLIND]
-        # In 6-max or full ring, Button and CO are in position
-        return pos in [Position.BUTTON, Position.CO]
+        # Use the position symbols to determine if we're in position
+        return self.table_state.is_late_position() or self.table_state.is_last_to_act()

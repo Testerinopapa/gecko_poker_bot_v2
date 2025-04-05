@@ -1,0 +1,41 @@
+2025-04-03 22:06:04,479 - INFO - === GeckoBot Logging Session 20250403_220604 Started ===
+2025-04-03 22:06:04,486 - INFO - === Starting GeckoBot Poker Game ===
+2025-04-03 22:06:04,495 - INFO - === Round 1 Started ===
+2025-04-03 22:06:04,496 - ERROR - Logger initialized with session ID: 20250403_220604Log directory: logsLog directory exists: True
+=== New Game Started ===
+2025-04-03 22:06:05,999 - INFO - === Round 2 Started ===
+2025-04-03 22:06:06,186 - ERROR - 
+=== Hole Cards ===Your hand: Tc 9sMonte Carlo win probability: 31.05%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-03 22:06:07,336 - INFO - === Round 3 Started ===
+2025-04-03 22:06:07,337 - ERROR - 
+=== Hole Cards ===Your hand: 7c 5dMonte Carlo win probability: 21.50%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-03 22:06:08,074 - INFO - === Round 4 Started ===
+2025-04-03 22:06:08,076 - ERROR - 
+=== Hole Cards ===Your hand: 8d TsMonte Carlo win probability: 27.05%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-03 22:06:08,829 - INFO - === Round 5 Started ===
+2025-04-03 22:06:08,833 - ERROR - 
+=== Hole Cards ===Your hand: Qc 2sMonte Carlo win probability: 21.45%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990
+=== New Game Started ===
+2025-04-03 22:06:09,586 - INFO - === Game Complete ===
+2025-04-03 22:06:09,600 - INFO - Thanks for playing!
+2025-04-03 22:06:09,603 - INFO - Session data saved to logs\geckobot_20250403_220604_data.json
+2025-04-03 22:06:09,620 - ERROR - 
+=== Hole Cards ===Your hand: 9h JsMonte Carlo win probability: 31.35%
+=== Blinds Posted ===Small Blind: 10Big Blind: 20
+=== PREFLOP Betting Round ===Pot: 30.0Your stack: 29990Button callsBot folds
+=== Hand Complete ===Final pot: 50.0Your final stack: 29990Session data saved to: logs\geckobot_20250403_220604_data.jsonFile exists: True
