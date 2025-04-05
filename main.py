@@ -6,13 +6,13 @@ GeckoBot Poker - A Python-based poker bot
 import argparse
 import logging
 from typing import Optional
-from game_runner import GameRunner
-from gecko_bot import GeckoBot
-from table_state import TableState
-from hand_evaluator import HandEvaluator
-from position_manager import PositionManager
+from src.core.game_runner import GameRunner
+from src.core.gecko_bot import GeckoBot
+from src.core.table_state import TableState
+from src.core.hand_evaluator import HandEvaluator
+from src.core.position_manager import PositionManager
 from visualization.match_visualizer import MatchVisualizer
-from logger import DebugLevel
+from src.utils.logger import DebugLevel
 
 # Configure logging
 logging.basicConfig(
@@ -124,6 +124,7 @@ def main():
         debug_level = DebugLevel.TRACE
 
     # Get logger
+    from src.utils.logger import get_logger
     logger = get_logger(debug_level=debug_level)
 
     # Debug print
